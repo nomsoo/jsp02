@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../mobile_project/test2.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+<link rel="stylesheet" 
+href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script 
+src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js">
+</script>
+</head>
+<body id="blog">
+ <div data-role="page" data-theme="b">
+  <div data-role="panel" id="right" data-position="right"> 
+				<ul data-role="listview">
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="about.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>		
+		</div>
+ 
+	<div id="header" data-role="header">
+		<h1 id="avatar" style="margin:0.8rem">My Travel Blog</h1>
+		 <div data-role="navbar" data-iconpos="top">
+		 	 <ul>
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="about.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>
+			 <a class="ui-link ui-btn-right ui-icon-bars ui-corner-all" data-icon="bars" href="#right" >MENU</a>
+		</div>
+	</div>
+	<div data-role="content">
+	 	<div data-role="main" class="ui-content">
+	 	<p> 관심있는 분야를 선택해 주세요 </p>
+		<div data-role="collapsible">
+		  <h1>성요셉 성당</h1>
+		  <p>호엔끼엠 호수에서 도보로 10분 거리에 있는 성 요셉 성당은 하노이에서 가장 오래된 성당으로
+			파리 노트르담 성당을 본따서 만들어졌다.</p>
+		  <img style="width: 80%" src="images1/hanoi3.jpg" border="0px">
+		  <div data-role="collapsible" data-mini="true">
+			<h1>성요셉 성당 알아보기</h1>
+			<a href="hanoi_map1.html">정보보러가기</a>
+		  </div>
+		</div>
+
+		<div data-role="collapsible">
+		  <h1>호안끼엠 호수</h1>
+		  <p>하노이 중심에 펼쳐진 호안끼엠 호수는 도시의 상징이자 시민들의 휴식 공간으로 사랑받는 곳이다. 
+		  시내에 크고 작은 호수가 많아 '호수의 도시'로 불리는 하노이에서도 가장 대표적인 호수다. 
+		  남북으로 길게 이어진 호수 주위로 싱그러운 녹음이 어우러져 더위를 피하기에 좋다.</p>
+		  <img style="width: 80%" src="images1/hanoi1.jpg" border="0px">
+		  <div data-role="collapsible" data-mini="true">
+			<h1>호안끼엠 호수 알아보기</h1>
+			<a href="hanoi_map1.html">정보보러가기</a>
+		  </div>
+		</div>
+
+		<div data-role="collapsible">
+		  <h1>하롱베이</h1>
+		  <p>평화의 바다, 위로의 섬. 베트남을 꿈꿀 때면 하롱베이의 비경이 가슴에 피어오른다. 
+		  베트남의 추억과 감동을 하롱베이처럼 단번에 표현해 주는 곳도 없을 것이기 때문이다.
+		   바다 위에 떠 있는 3천여 개의 섬들이 만들어 낸 찬란한 아름다움은 온 인류의 가슴속에 오랫동안 살아 숨쉬게 될 것이다.</p>
+		  <img style="width: 80%" src="images1/hanoi2.jpg" border="0px">
+		  <div data-role="collapsible" data-mini="true">
+			<h1>하롱베이 알아보기</h1>
+			<a href="hanoi_map1.html">정보보러가기</a>
+		  </div>
+		</div>
+	</div>
+	</div>		 
+	<div data-role="footer">
+		<h4><p>&copy; 저작권 or 출저: <a href="http://google.com">Google</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p></h4>
+	</div>
+</div>
+</body>
+</html>

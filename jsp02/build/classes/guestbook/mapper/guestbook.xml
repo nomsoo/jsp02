@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?> <!-- xml 지시어 -->
+<!-- 현재 xml 문서의 dtd(문서 타입)을 선언 -->
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace : sql 명령어들의 집합, java의 패키지와 같은 개념, --> 
+<mapper namespace="guestbook">
+<!-- id : 프로그램에서 호출하는 변수명
+resultType : select 명령어의 리턴 타입 -->
+  <select id="gbList" resultType="guestbook.dto.GuestBookDTO">
+    select idx,name,email,content,post_date
+    from guestbook
+    where ${searchkey} like #{search} 
+    order by idx desc
+  </select>
+  
+  <select id="gbListAll" resultType="guestbook.dto.GuestBookDTO">
+    select idx,name,email,content,post_date
+    from guestbook
+    where name like #{search} or content like #{search} 
+    order by idx desc
+  </select>
+  
+  <insert id="gbInsert">
+    insert into guestbook
+    (idx,name,email,passwd,content) values
+    (guestbook_seq.nextval,#{name},#{email},#{passwd},#{content})
+  </insert>
+  
+  <select id="passwdCheck" resultType="int">
+    select count(*) from guestbook 
+    where idx=#{idx} and passwd=#{passwd} 
+  </select>
+  <!-- 위 passwd값은 GuestBookDAO의 int 
+  count=session.selectOne("passwdCheck", dto); 의 dto에서
+  공급해준 값이다. idx=#{idx}=>getIdx(), 
+  passwd=#{passwd}=>getPasswd()-->
+  
+  <select id="gbDetail" 
+  parameterType="int" resultType="guestbook.dto.GuestBookDTO">
+    select * from guestbook
+    where idx=#{idx}
+  </select>
+  <!-- DAO에서 입력한 글번호가 idx에 들어옴,
+   parameterType은 생략가능하나 써줘도 좋다. 단, resultType은 
+   반드시 써야한다.-->
+   
+   <update id="gbUpdate" 
+   parameterType="guestbook.dto.GuestBookDTO">
+     update guestbook set name=#{name}, 
+     email=#{email}, passwd=#{passwd}, content=#{content} 
+     where idx=#{idx}
+   </update>
+   
+   <delete id="gbDelete" parameterType="int">
+     delete from guestbook
+     where idx=#{idx}
+   </delete>
+  
+<!-- 
+$() JQuery의 선택자(selector)
+${} EL 변수
+#{변수} mybatis 변수(따옴표 포함) ex) #{'memo'}
+${변수} mybatis 변수(따옴표 미포함) ex) ${memo}
+
+[주의사항]
+writer=#{writer} => getWriter()
+memo=#{memo} =>getMemo()
+-->
+
+</mapper>

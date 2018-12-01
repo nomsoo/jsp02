@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="emp">
+<!-- DAO의 session.selectList("emp.empList",map) 에서
+map에 start, end값이 모두 있음 map.put("start", start);
+map.put("end", end);의 "start", "end"를 마이바티스변수에 사용함. -->
+  <select id="empList" resultType="e">
+     select *
+     from (
+       select A.*, rownum as rn 
+       from (
+          select empno, ename 
+          from test
+          order by empno
+       ) A
+     )
+     where rn between #{start} and #{end}
+  </select>
+  
+  <select id="empCount" resultType="int">
+    select count(*) from test
+  </select>
+  
+  
+</mapper>

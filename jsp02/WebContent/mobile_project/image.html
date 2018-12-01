@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="../include/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+ $(function() {
+	 $("#small a").click(function(e) {
+		e.preventDefault();//기본효과를 막음(a태그의 하이퍼링크 기능 제거)
+		//클락한 하이퍼링크의 href 속성값
+		var imgPath = $(this).attr("href");
+		//large 태그의 img src속성에 복사
+		$("#large img").attr({
+			src : imgPath
+		});
+	 });
+ });
+
+</script>
+
+<style type="text/css">
+#wrap {
+  text-align: center;
+  width: 500px;
+}
+#large img {
+  width: 350px;
+  height: 350px;
+}
+ul li {
+  list-style: none; /* 불릿제거 */
+  display: inline; /* 한 라인에 여러 요소 배치 */
+}
+ul img {
+  width: 100px;
+  height: 100px;
+}
+</style>
+</head>
+<body>
+ <h2>Image change</h2>
+ <div id="wrap">
+   <div id="large">
+     <a href="#"><img src="../images/01.jpg"> </a>
+   </div>
+   <div id="small">
+     <ul>
+       <li><a href="../images/01.jpg"> 
+       <img src="../images/01.jpg" border="0px">  
+       </a></li>
+       <li><a href="../images/02.jpg"> 
+       <img src="../images/02.jpg" border="0px">  
+       </a></li>
+       <li><a href="../images/03.jpg"> 
+       <img src="../images/03.jpg" border="0px">  
+       </a></li>
+       <li><a href="../images/04.jpg"> 
+       <img src="../images/04.jpg" border="0px">  
+       </a></li>
+     </ul>
+   </div>
+ </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../mobile_project/test2.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+<link rel="stylesheet" 
+href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script 
+src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js">
+</script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=42854f790051726f073719e0f47ce434"></script>
+<script>
+ function maps(){
+	 var mapContainer = document.getElementById('map'), 
+	    mapOption = { 
+	        center: new daum.maps.LatLng(37.570425, 126.922944), 
+	        level: 3 
+	    };
+	var map = new daum.maps.Map(mapContainer, mapOption);
+	var markerPosition  = new daum.maps.LatLng(37.570425, 126.922944); 
+	var marker = new daum.maps.Marker({
+	    position: markerPosition
+	});
+	marker.setMap(map);	
+} 
+</script>
+</head>
+<body id="blog">
+ <div data-role="page" data-theme="b">
+  <div data-role="panel" id="right" data-position="right"> 
+				<ul data-role="listview">
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="about.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>		
+		</div>
+ 
+	<div id="header" data-role="header">
+		<h1 id="avatar" style="margin:0.8rem">My Travel Blog</h1>
+		 <div data-role="navbar" data-iconpos="top">
+		 	 <ul>
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="about.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>
+			 <a class="ui-link ui-btn-right ui-icon-bars ui-corner-all" data-icon="bars" href="#right" >MENU</a>
+		</div>
+	</div>
+<div data-role="content">
+	<div class="ui-grid-a" id="restau_infos">
+		<div class="ui-block-a">
+			<h1>대만</h1>
+			<p>다른 여행지 추천</p>
+			<ul>
+			<li>가오슝</li>
+			<li>시먼딩</li>
+			</ul>
+		</div>
+		<div class="ui-block-b">
+			<p>
+			<img src="../images/staticmap.png" alt="" />
+			</p>
+			<p>
+			<a href="https://www.skyscanner.co.kr/transport/flights/sela/tpe
+			t/180627/180704/?adults=1&children=0&adultsv2=1&childrenv2=&inf
+			ants=0&cabinclass=economy&rtn=1&preferdirects=false&outboundalts
+			enabled=false&inboundaltsenabled=false&ref=home"
+			 data-role="button">항공 예메권 알아보기</a>
+			</p>
+		</div>
+		</div>
+			<hr />
+			<div class="ui-grid-a" id="contact_infos">
+				<div class="ui-block-a">
+					<p>타이베이의 위치를 알아보고 싶으면 아래 버튼을 클릭하세요.</p>
+				</div>
+			</div>
+			<!-- /grid-a -->
+			
+			
+			<div id="contact_buttons">
+				<a href="#" data-role="button" onclick="maps()">다음 지도에서 찾기</a> 
+				<a href="taiwan.html" data-role="button"> 대만의 다른여행지 알아보기 </a>
+			</div>
+			<div id="map" style="width: auto; height: 400px;"></div>
+			<hr />
+			<div id="notation">
+				<form>
+					<label for="select-choice-0" class="select">
+						<h2>필자의 평가</h2>
+					</label> <select name="note_utilisateur" id="note_utilisateur"
+						data-native-menu="false" data-theme="c">
+						<option value="one" class="one">추천할 수 없음</option>
+						<option value="two" class="two">보통</option>
+						<option value="three" class="three" selected="selected">좋음
+						</option>
+						<option value="four" class="four">아주좋음</option>
+					</select>
+				</form>
+			</div>
+			</div>
+				
+				
+  	<div data-role="footer">
+		<h4><p>&copy; 저작권 or 출저: <a href="http://google.com">Google</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p></h4>
+	</div>
+</div>   
+
+</body>
+</html>

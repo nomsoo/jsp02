@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../mobile_project/test2.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+<link rel="stylesheet" 
+href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script 
+src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js">
+</script>
+<script type="text/javascript">
+ $(function() {
+	 $("#small a").click(function(e) {
+		e.preventDefault();//기본효과를 막음(a태그의 하이퍼링크 기능 제거)
+		//클락한 하이퍼링크의 href 속성값
+		var imgPath = $(this).attr("href");
+		//large 태그의 img src속성에 복사
+		$("#large img").attr({
+			src : imgPath
+		});
+	 });
+ });
+</script>
+</head>
+<body>
+ <div data-role="page" data-theme="b">
+	<div id="header" data-role="header">
+		<h1 id="avatar">My Travel Blog</h1>
+		 <div data-role="navbar" data-iconpos="top">
+		 	 <ul>
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="about.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>
+		</div>
+		<a class="ui-link ui-btn-right ui-icon-bars ui-corner-all" data-icon="bars" href="#right" >MENU</a>
+	 <h1>라오스 여행지 추천</h1>
+ </div>
+ <center><div id="warp">
+ 	<div id="large">
+ <img style="border-radius:4%; margin-top:2rem; margin-bottom:2rem; width: 80%" src="images1/raos/fulls/01.jpg">
+	</div><hr/>
+<div id="small" style="width: 99%">
+     <ul>
+       <li id="popup"><a href="images1/raos/fulls/01.jpg">
+       <img src="images1/raos/fulls/01.jpg" border="0px">  
+       </a></li>
+       <li id="popup"><a href="images1/raos/fulls/02.jpg"> 
+       <img src="images1/raos/fulls/02.jpg" border="0px">  
+       </a></li>
+       <li id="popup"><a href="images1/raos/fulls/03.jpg"> 
+       <img src="images1/raos/fulls/03.jpg" border="0px">  
+       </a></li>
+       <li id="popup"><a href="images1/raos/fulls/04.jpg"> 
+       <img src="images1/raos/fulls/04.jpg" border="0px">
+       </a></li>
+       <li id="popup"><a href="images1/raos/fulls/05.jpg">
+       <img src="images1/raos/fulls/05.jpg" border="0px">    
+       </a></li>       
+     </ul>
+ </div><hr/>
+ </div></center>
+ <center style="padding-top: 2rem"><a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="window">라오스의 특징</a>
+ 	<div data-role="popup" id="myPopup" class="ui-content">
+ 	<ul>
+ 	<li>때묻지 않은 순수함의 나라 라오스 </li><br>
+	<li>많은 엑티비티를 즐기며 자연을 느낄 수 있다</li><br>
+	<li>동남아시아에서 가장 느긋하고 평화로운 도시</li>
+	</ul>
+	</div>
+ <div data-role="content">
+  <div class="choice_list">
+   <h3>라오스의 관심있는 분야를 선택하여주세요.</h3>
+   <ul data-role="listview" data-inset="true" data-filter="true">
+    <li><a href="raos_index.html" 
+    data-transition="slidedown"> 먹거리 
+    <span class="ui-li-count">2</span> </a></li>
+        <li><a href="raos_index.html" 
+    data-transition="slidedown"> 액티비티 
+    <span class="ui-li-count">4</span> </a></li>
+        <li><a href="raos_index.html" 
+    data-transition="slidedown"> 놀거리 
+    <span class="ui-li-count">2</span> </a></li>
+     </ul>
+   </div>
+ </div>
+ 	<div data-role="footer">
+		<h4><p>&copy; 저작권 or 출저: <a href="http://google.com">Google</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p></h4>
+	</div>
+</div>
+</body>
+</html>

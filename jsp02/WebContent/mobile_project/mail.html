@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../mobile_project/test2.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+<link rel="stylesheet" 
+href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script 
+src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js">
+</script>
+<script type="text/javascript">
+$(function() {
+	$("input").focus(function() {
+		$(this).css("background-color","rgba(170,170,170,0.8)");
+		$(this).css("border", "1px dotted black");
+	});
+	$("input").blur(function() {
+		$(this).css("background-color", "white");
+		$(this).css("border", "1px solid black");
+	});
+});
+
+function check(){
+	var pit=document.form1.pit.value;
+	var size=document.form1.size.value;
+	var bt=document.form1.bt.value;
+	var pick=document.form1.pick.value;
+	var pro=document.form1.pro.value;
+	if(pit==""){
+		alert("1번을 입력하세요.");
+		document.form1.pit.focus();
+		return;
+	}
+	if(size==""){
+		alert("2번을 입력하세요.");
+		document.form1.size.focus();
+		return;
+	}
+	if(bt==""){
+		alert("보내시는 날짜를 입력하세요.");
+		document.form1.bt.focus();
+		return;
+	}
+	if(pro==""){
+		alert("자기소개를 입력해 주세요.");
+		document.form1.pro.focus();
+		return;
+	}
+	alert("보내주신 정보를 참고하여 보다 좋은 페이지를 만들겠습니다.");
+	alert("메인화면으로 넘어갑니다.");
+	document.form1.submit();	
+}
+</script>
+
+<style>
+input {
+    margin: 2px 1px;
+    align:center;
+}
+</style>
+</head>
+<body>
+<body id="blog">
+ <div data-role="page" data-theme="b">
+  <div data-role="panel" id="right" data-position="right"> 
+				<ul data-role="listview">
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="about.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>		
+		</div>
+ 
+	<div id="header" data-role="header">
+		<h1 id="avatar" style="margin:0.8rem">My Travel Blog</h1>
+		 <div data-role="navbar" data-iconpos="top">
+		 	 <ul>
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="about.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>
+			 <a class="ui-link ui-btn-right ui-icon-bars ui-corner-all" data-icon="bars" href="#right" >MENU</a>
+		</div>
+	</div>
+<div data-role="content">
+<form name="form1" action="mobile_main.html" method="post">
+<br>
+<center><h3>저에게 전하고 싶은 말씀이 있으신가요?</h3>
+<p>1. 어느 여행지가 마음에 드셨나요?</p>
+<label><input type="radio" name="pit" value="유럽">유럽</label>
+<label><input type="radio" name="pit" value="라오스"> 라오스</label>
+<label><input type="radio" name="pit" value="대만"> 대만 </label><hr/>
+<p>2. 사이트의 디자인은 어떠셨나요?</p>
+<label><input type="radio" name="size" value="어깨가 조금 남는다."> 좋음</label>
+<label><input type="radio" name="size" value="어깨가 잘 맞는다."> 보통</label>
+<label><input type="radio" name="size" value="어깨 기장이 모자란다."> 나쁨 </label><hr/>
+<p>3. 건의사항을 보내시는 날짜를 선택해주세요.</p>
+<label><input type="date" name="bt"></label>
+<p>4. 다음 여행지는 어디로 가는것을 추천하시나요?(중복입력가능)</p>
+<label><input type="checkbox" name="pick" value="중국"> 중국</label>
+<label><input type="checkbox" name="pick" value="북유럽"> 북유럽</label>
+<label><input type="checkbox" name="pick" value="님미권"> 남미권</label>
+<label><input type="checkbox" name="pick" value="기타"> 기타</label> <input name=input placeholder="예) 동남아, 태국">  <hr/>
+<p>5. 저에게 부탁하고 싶은 부분/요청 사항을 적어주세요.</p>
+<legend>요청사항</legend> 
+<textarea  name="pro" rows="5" cols="65"></textarea>
+<input type="button" value="보내기" onclick="check()">
+</form></center>
+</div>
+<div data-role="footer">
+		<h4><p>&copy; 저작권 or 출저: <a href="http://google.com">Google</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p></h4>
+	</div>
+</div>
+
+</body>
+</html>

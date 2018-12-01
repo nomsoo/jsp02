@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="http://localhost:8088/jsp02/mobile_project/test2.css" />
+<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/earlyaccess/hanna.css">
+<link rel="stylesheet" 
+href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css"/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script 
+src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js">
+</script>
+</head>
+<body id="blog">
+ <div data-role="page" data-theme="b">
+  <div data-role="panel" id="right" data-position="right"> 
+				<ul data-role="listview">
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="abou3t.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>		
+		</div>
+ 
+	<div id="header" data-role="header">
+		<h1 id="avatar" style="margin:0.8rem">My Travel Blog</h1>
+		 <div data-role="navbar" data-iconpos="top">
+		 	 <ul>
+				<li><a href="mobile_main.html" data-icon="home">Home</a></li>
+				<li><a href="abou3t.html" data-icon="eye">about</a></li>
+				<li><a href="mail.html" data-icon="phone">고객센터</a></li>
+			 </ul>
+			 <a class="ui-link ui-btn-right ui-icon-bars ui-corner-all" data-icon="bars" href="#right" >MENU</a>
+			 <a class="ui-link ui-btn-left ui-icon-bars ui-corner-all" data-icon="user" href="login.html" >LOGIN</a>
+		</div>
+		<div data-role="content">
+		<center><h2>가고싶은 여행지를 선택하세요</h2></center>
+		<ul data-role="listview" data-inset="true" data-filter="true">
+			<li><a href="hongkong.html">
+			<img src="http://localhost:8088/jsp02/mobile_project/images1/hongkong1.jpg">
+			<h2>홍콩</h2>
+			<p>마카오의 매력을 느껴보세요.</p>
+			</a></li>			
+			<li><a href="raos.html">
+			<img src="http://localhost:8088/jsp02/mobile_project/images1/raos1.jpg">
+			<h2>라오스</h2>
+			<p>여러가지 액티비티를 체험해보세요.</p>
+			</a></li>	
+			<li><a href="europe.html">
+			<img src="http://localhost:8088/jsp02/mobile_project/images1/Europe/thumbs/01.jpg">
+			<h2>유럽</h2>
+			<p>예술과 문화, 역사의 중심지!</p>
+			</a></li>	
+			<li><a href="taiwan.html">
+			<img src="http://localhost:8088/jsp02/mobile_project/images1/taiwan1.jpg">
+			<h2>대만</h2>
+			<p>중국과 일본의 절묘한 조화가 이루어진 나라</p>
+			</a></li>	
+			<li><a href="hanoi.html">
+			<img src="http://localhost:8088/jsp02/mobile_project/images1/hanoi1.jpg">
+			<h2>하노이</h2>
+			<p>베트남의 여유로운 도시를 느껴보세요.</p>
+			</a></li>		
+		</ul>
+	</div>
+	<div data-role="footer">
+		<h4><p>&copy; 저작권 or 출저: <a href="http://google.com">Google</a>. Demo Images: <a href="http://unsplash.com">Unsplash</a>.</p></h4>
+	</div>
+</div>
+</div>
+</body>
+</html>

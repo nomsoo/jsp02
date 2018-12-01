@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- xml 지시어 -->
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 해당하는 파일들이 반드시 존재해야 매핑에러가 안남 -->
+	<!-- 알리아스 설정 resultType에서 쓸 긴 줄을 간략하게 해줌
+	type="실제전체경로" alias="줄임말"-->
+	<typeAliases>
+	  <typeAlias type="page.EmpDTO" alias="e"/>
+
+	</typeAliases>
+	<!-- db연결 참조코드(Server의 context.xml과 연결됨) -->
+	<environments default="">
+		<environment id="">
+			<transactionManager type="JDBC" />
+			<dataSource type="JNDI">
+				<property name="data_source" 
+					value="java:comp/env/jdbc/OracleDB" />
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 실제 sql query -->
+	<mappers>
+	  <mapper resource="memo/mapper/memo.xml"/>
+	  <mapper resource="guestbook/mapper/guestbook.xml"/>
+	  <mapper resource="page/mapper/emp.xml"/>
+	  <mapper resource="board/mapper/board.xml"/>
+	</mappers>
+</configuration>
+
+
+
+
+
